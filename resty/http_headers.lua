@@ -15,6 +15,7 @@ function _M.new()
     }
 
     mt.__index = function(t, k)
+        if type(k) ~= 'string' then return nil end
         return rawget(t, mt.normalised[str_lower(k)])
     end
 
